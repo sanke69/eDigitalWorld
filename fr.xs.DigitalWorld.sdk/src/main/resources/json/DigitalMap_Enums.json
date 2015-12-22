@@ -1,0 +1,80 @@
+{
+	"DATABASE" : {
+		"DigitalMap" : {
+			"TABLES" : [
+				{"roadclass" : {
+					"COLUMNS" : {
+						"uuid"            : "INT(12) UNSIGNED NOT NULL AUTO_INCREMENT",
+						"desc"            : "STRING(256) NOT NULL"
+					},
+					"OPTIONS" : {
+						"PRIMARY KEY"     : "uuid",
+						"UNIQUE"          : "desc",
+						"ENGINE"          : "InnoDB",
+						"DEFAULT CHARSET" : "utf8"
+					}
+				}},
+				{"drvcond" : {
+					"COLUMNS" : {
+						"uuid"            : "INT(12) UNSIGNED NOT NULL AUTO_INCREMENT",
+						"desc"            : "VARCHAR(255) NOT NULL"
+					},
+					"OPTIONS" : {
+						"UNIQUE KEY"      : "uuid",
+						"ENGINE"          : "InnoDB",
+						"DEFAULT CHARSET" : "utf8",
+						"AUTO_INCREMENT"  : "1"
+					}
+				}},
+				{"slipcond" : {
+					"COLUMNS" : {
+						"uuid"         : "INT(12) UNSIGNED NOT NULL AUTO_INCREMENT",
+						"desc"         : "VARCHAR(255) NOT NULL"
+					},
+					"OPTIONS" : {
+						"UNIQUE KEY"      : "uuid",
+						"ENGINE"          : "InnoDB",
+						"DEFAULT CHARSET" : "utf8",
+						"AUTO_INCREMENT"  : "1"
+					}
+				}},
+				{"status" : {
+					"COLUMNS" : {
+						"uuid"         : "INT(12) UNSIGNED NOT NULL AUTO_INCREMENT",
+						"desc"         : "VARCHAR(255) NOT NULL"
+					},
+					"OPTIONS" : {
+						"UNIQUE KEY"      : "uuid",
+						"ENGINE"          : "InnoDB",
+						"DEFAULT CHARSET" : "utf8",
+						"AUTO_INCREMENT"  : "1"
+					}
+				}},
+				{"crosslvl" : {
+					"COLUMNS" : {
+						"uuid"         : "INT(12) UNSIGNED NOT NULL AUTO_INCREMENT",
+						"desc"         : "VARCHAR(255) NOT NULL"
+					},
+					"OPTIONS" : {
+						"UNIQUE KEY"      : "uuid",
+						"ENGINE"          : "InnoDB",
+						"DEFAULT CHARSET" : "utf8",
+						"AUTO_INCREMENT"  : "1"
+					}
+				}},
+				{"adminstatus" : {
+					"COLUMNS" : {
+						"uuid"         : "INT(12) UNSIGNED NOT NULL AUTO_INCREMENT",
+						"desc"         : "VARCHAR(255) NOT NULL"
+					},
+					"OPTIONS" : {
+						"UNIQUE KEY"      : "uuid",
+						"ENGINE"          : "InnoDB",
+						"DEFAULT CHARSET" : "utf8",
+						"AUTO_INCREMENT"  : "1"
+					}
+				}}
+			]
+		}
+	}
+}

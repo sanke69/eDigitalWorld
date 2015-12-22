@@ -1,0 +1,113 @@
+{
+	"DATABASE" : {
+		"DigitalMap" : {
+			"TABLES" : [
+				{"node" : {
+					"COLUMNS" : {
+						"id"              : "INT(12) UNSIGNED NOT NULL AUTO_INCREMENT",
+						"coord"           : "POINT NOT NULL",
+						"lastmodified"    : "TIMESTAMP NOT NULL"
+					},
+					"OPTIONS" : {
+						"PRIMARY KEY"     : "id",
+						"UNIQUE"          : "coord",
+						"ENGINE"          : "InnoDB",
+						"DEFAULT CHARSET" : "utf8",
+						"AUTO_INCREMENT"  : "1"
+					}
+				}},
+				{"element" : {
+					"COLUMNS" : {
+						"id"              : "INT(12) UNSIGNED NOT NULL AUTO_INCREMENT",
+						"name"            : "VARCHAR(256) CHARACTER SET utf8 collate utf8_roman_ci NOT NULL DEFAULT 'NC'", 
+						"nature"          : "VARCHAR(128) NOT NULL DEFAULT 'NC'",
+						"ways"            : "VARCHAR(7) NOT NULL DEFAULT 'BOTH'",
+						"ref"             : "VARCHAR(32) NOT NULL DEFAULT 'NC'",
+						"geometry"        : "LINESTRING NOT NULL",
+						"roadclass"       : "VARCHAR(256) NOT NULL DEFAULT 'NC'",
+						"drvcond"         : "VARCHAR(256) NOT NULL DEFAULT 'NC'",
+						"slipcond"        : "VARCHAR(256) NOT NULL DEFAULT 'NC'",
+						"status"          : "VARCHAR(256) NOT NULL DEFAULT 'NC'",
+						"crosslvl"        : "VARCHAR(256) NOT NULL DEFAULT 'NC'",
+						"adminstatus"     : "VARCHAR(256) NOT NULL DEFAULT 'NC'",
+						"common"          : "VARCHAR(1024) NULL",
+						"nodes"           : "VARCHAR(1024) NULL",
+						"lastmodified"    : "TIMESTAMP NOT NULL"
+					},
+					"OPTIONS" : {
+						"PRIMARY KEY"     : "id",
+						"SPATIAL KEY"     : "geometry",
+						"ENGINE"          : "InnoDB",
+						"DEFAULT CHARSET" : "utf8",
+						"AUTO_INCREMENT"  : "1"
+					}
+				}},
+				{"relief" : {
+					"COLUMNS" : {
+						"id"              : "INT(12) UNSIGNED NOT NULL AUTO_INCREMENT",
+						"name"            : "VARCHAR(255) NOT NULL",
+						"nature"          : "VARCHAR(255) NOT NULL DEFAULT 'WATER'",
+						"geometry"        : "LINESTRING NOT NULL",
+						"lastmodified"    : "TIMESTAMP NOT NULL"
+					},
+					"OPTIONS" : {
+						"PRIMARY KEY"     : "id",
+						"SPATIAL KEY"     : "geometry",
+						"ENGINE"          : "InnoDB",
+						"DEFAULT CHARSET" : "utf8",
+						"AUTO_INCREMENT"  : "1"
+					}
+				}},
+				{"poi" : {
+					"COLUMNS" : {
+						"id"              : "INT(12) UNSIGNED NOT NULL AUTO_INCREMENT",
+						"name"            : "VARCHAR(256) CHARACTER SET utf8 collate utf8_roman_ci NOT NULL DEFAULT 'NC'", 
+						"nature"          : "VARCHAR(128) NOT NULL DEFAULT 'WATER'",
+						"coord"           : "POINT NOT NULL",
+						"value"           : "VARCHAR(20) NOT NULL",
+						"type"            : "VARCHAR(20) NOT NULL",
+						"resource"        : "VARCHAR(20) NOT NULL",
+						"lastmodified"    : "TIMESTAMP NOT NULL"
+					},
+					"OPTIONS" : {
+						"PRIMARY KEY"     : "id",
+						"ENGINE"          : "InnoDB",
+						"DEFAULT CHARSET" : "utf8",
+						"AUTO_INCREMENT"  : "1"
+					}
+				}},
+				{"roi" : {
+					"COLUMNS" : {
+						"id"              : "INT(12) UNSIGNED NOT NULL AUTO_INCREMENT",
+						"name"            : "VARCHAR(256) CHARACTER SET utf8 collate utf8_roman_ci NOT NULL DEFAULT 'NC'", 
+						"nature"          : "VARCHAR(128) NOT NULL DEFAULT 'NC'",
+						"geometry"        : "LINESTRING NOT NULL",
+						"lastmodified"    : "TIMESTAMP NOT NULL"
+					},
+					"OPTIONS" : {
+						"PRIMARY KEY"     : "id",
+						"ENGINE"          : "InnoDB",
+						"DEFAULT CHARSET" : "utf8",
+						"AUTO_INCREMENT"  : "1"
+					}
+				}},
+				{"speed_limit" : {
+					"COLUMNS" : {
+						"id"              : "INT(12) UNSIGNED NOT NULL AUTO_INCREMENT",
+						"id_way"          : "INT NOT NULL",
+						"abs_cur_beg"     : "DOUBLE NULL",
+						"abs_cur_end"     : "DOUBLE NULL",
+						"value"           : "DOUBLE NOT NULL",
+						"lastmodified"    : "TIMESTAMP NOT NULL"
+					},
+					"OPTIONS" : {
+						"PRIMARY KEY"     : "id",
+						"ENGINE"          : "InnoDB",
+						"DEFAULT CHARSET" : "utf8",
+						"AUTO_INCREMENT"  : "1"
+					}
+				}}
+			]
+		}
+	}
+}

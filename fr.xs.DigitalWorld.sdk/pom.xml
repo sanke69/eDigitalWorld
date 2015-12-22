@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+
+	<parent>
+		<groupId>com.xs</groupId>
+		<artifactId>fr.xs.pom.eDigitalWorld</artifactId>
+		<version>0.3.0.1</version>
+	</parent>
+
+	<artifactId>fr.xs.eDigitalWorld.sdk</artifactId>
+	<!-- version>0.3.0.1</version -->
+
+	<name>fr.xs.DigitalWorld.sdk</name>
+
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.apache.felix</groupId>
+				<artifactId>maven-bundle-plugin</artifactId>
+				<version>1.4.0</version>
+				<extensions>true</extensions>
+				<configuration>
+					<instructions>
+						<Bundle-SymbolicName>${project.groupId}.${project.artifactId}</Bundle-SymbolicName>
+						<Bundle-Name>${project.artifactId}</Bundle-Name>
+						<Bundle-Version>1.0.0</Bundle-Version>
+						<Export-Package>
+							fr.xs.DigitalWorld.sdk.common.interfaces.map,
+							fr.xs.DigitalWorld.sdk.common.interfaces.position,
+							fr.xs.DigitalWorld.sdk.common.interfaces,
+							fr.xs.DigitalWorld.sdk.common.types.coordinates.conversion,
+							fr.xs.DigitalWorld.sdk.common.types.coordinates,
+							fr.xs.DigitalWorld.sdk.common.types.map.attributes.others,
+							fr.xs.DigitalWorld.sdk.common.types.map.attributes.roads,
+							fr.xs.DigitalWorld.sdk.common.types.map.attributes,
+							fr.xs.DigitalWorld.sdk.common.types.map.objects,
+							fr.xs.DigitalWorld.sdk.common.types.map,
+							fr.xs.DigitalWorld.sdk.common.types.position,
+							fr.xs.DigitalWorld.sdk.common.types,
+							fr.xs.DigitalWorld.sdk.osm.xml.handler,
+							fr.xs.DigitalWorld.sdk.osm.xml.items,
+							fr.xs.DigitalWorld.sdk.osm.xml.tags,
+							fr.xs.DigitalWorld.sdk.osm.xml,
+							fr.xs.DigitalWorld.sdk.osm,
+						</Export-Package>
+					</instructions>
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>
+
+</project>

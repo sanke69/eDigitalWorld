@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+
+	<parent>
+		<groupId>com.xs</groupId>
+		<artifactId>fr.xs.pom.eDigitalWorld</artifactId>
+		<version>0.3.0.1</version>
+	</parent>
+
+	<artifactId>fr.xs.eDigitalWorld.client</artifactId>
+	<!-- version>0.3.0.1</version -->
+
+	<name>fr.xs.DigitalWorld.client</name>
+
+	<dependencies>
+		<dependency>
+			<groupId>com.xs</groupId>
+			<artifactId>fr.xs.eDigitalWorld.sdk</artifactId>
+			<version>[0.3,)</version>
+		</dependency>
+	</dependencies>
+
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.apache.felix</groupId>
+				<artifactId>maven-bundle-plugin</artifactId>
+				<version>1.4.0</version>
+				<extensions>true</extensions>
+				<configuration>
+					<instructions>
+						<Bundle-SymbolicName>${project.groupId}.${project.artifactId}</Bundle-SymbolicName>
+						<Bundle-Name>${project.artifactId}</Bundle-Name>
+						<Bundle-Version>1.0.0</Bundle-Version>
+						<Export-Package>
+							dat.eroad.ldm.core.database,
+			                dat.eroad.ldm.core.ldmitem,
+			                dat.eroad.ldm.core.ldmitem.collection
+						</Export-Package>
+					</instructions>
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>
+
+</project>
